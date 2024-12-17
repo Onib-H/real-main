@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mediaqueries.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/crud.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/account.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <nav id="desktop-nav">
+<<<<<<< HEAD
+      <div class="logo"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo" /></div>
+=======
+      <div class="logo"><a href="{{ url_for('dashboard.index') }}"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo"/></a></div>
+>>>>>>> c0d931b (Initial commit)
+      <div>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('dashboard.index') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('profile.index') }}">Profile</a></li>
+          <li><a href="{{ url_for('blog.index') }}">Blog</a></li>
+          <li><a href="{{ url_for('account.index') }}" class="active">Account</a></li>
+          <li><a href="{{ url_for('dashboard.logout') }}">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo" /></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="{{ url_for('dashboard.index') }}" onclick="toggleMenu()">Dashboard</a></li>
+          <li><a href="{{ url_for('profile.index') }}" onclick="toggleMenu()">Profile</a></li>
+          <li><a href="{{ url_for('blog.index') }}" onclick="toggleMenu()">Blog</a></li>
+          <li><a href="{{ url_for('account.index') }}" onclick="toggleMenu()">Account</a></li>
+          <li><a href="{{ url_for('dashboard.logout') }}" onclick="toggleMenu()">Logout</a></li>
+        </div>
+      </div>
+    </nav>
+    <div class="responsive-table-wrapper">
+      <table class="table">
+          <thead class="header">
+              <tr>
+                  <th>First Name</th>
+                  <th>Middle Name</th>
+                  <th>Last Name</th>
+                  <th>Birthday</th>
+                  <th>Age</th>
+                  <th>Contact Number</th>
+                  <th>Email</th>
+<<<<<<< HEAD
+                  <!-- <th>Username</th>
+                  <th>Password</th> -->
+=======
+                  <th>Username</th>
+                  <th>Password</th>
+>>>>>>> c0d931b (Initial commit)
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for users in data %}
+              {% if users['id'] != 21 %}
+              <tr class="table-data">
+                  <td data-label="First Name:">{{ users['firstname'] }}</td>
+                  <td data-label="Middle Name:">{{ users['middlename'] }}</td>
+                  <td data-label="Last Name:">{{ users['lastname'] }}</td>
+                  <td data-label="Birthday:">{{ users['birthday'] }}</td>
+                  <td data-label="Age:">{{ users['age'] }}</td>
+                  <td data-label="Contact_Number:">{{ users['contact_number'] }}</td>
+                  <td data-label="Email:">{{ users['email'] }}</td>
+<<<<<<< HEAD
+                  <!-- <td data-label="Username:">{{ users['username'] }}</td>
+                  <td data-label="Password:">{{ users['password'] }}</td> -->
+=======
+                  <td data-label="Username:">{{ users['username'] }}</td>
+                  <td data-label="Password:">{{ users['password'] }}</td>
+>>>>>>> c0d931b (Initial commit)
+                  <td data-label="Actions">
+                      <a href="{{ url_for('account.update', id=users['id']) }}#create-user-section"><i class="fas fa-edit"></i></a>
+                      <a href="{{ url_for('crud.delete', id=users['id']) }}" onclick="return confirm('Are you sure you want to delete this user?')"><i class="fas fa-trash"></i></a>
+                  </td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+              <!-- {% for users in data %}
+              <tr class="table-data">
+                  <td data-label="First Name:">{{ users['firstname'] }}</td>
+                  <td data-label="Middle Name:">{{ users['middlename'] }}</td>
+                  <td data-label="Last Name:">{{ users['lastname'] }}</td>
+                  <td data-label="Birthday:">{{ users['birthday'] }}</td>
+                  <td data-label="Age:">{{ users['age'] }}</td>
+                  <td data-label="Contact_Number:">{{ users['contact_number'] }}</td>
+                  <td data-label="Email:">{{ users['email'] }}</td>
+                  <td data-label="Username:">{{ users['username'] }}</td>
+                  <td data-label="Password:">{{ users['password'] }}</td>
+                  <td data-label="Actions">
+                      <a href="{{ url_for('account.update', id=users['id']) }}#create-user-section"><i class="fas fa-edit"></i></a>
+                      <a href="{{ url_for('crud.delete', id=users['id']) }}" onclick="return confirm('Are you sure you want to delete this user?')"><i class="fas fa-trash"></i></a>
+                  </td>
+              </tr>
+              {% endfor %} -->
+          </tbody>
+      </table>
+  </div>
+  
+  
+  <div class="add-user-container">
+      <a href="{{ url_for('crud.create') }}#create-user-section" class="add-button">
+          <i class="fas fa-plus"></i> Add User
+      </a>
+  </div>
+      </nav>
+      <section id="contact">
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <i class="fas fa-envelope contact-icon"></i>
+            <p>haroldaldovino@gmail.com</p>
+          </div>
+          <div class="contact-info-container">
+            <i class="fas fa-phone contact-icon"></i> 
+            <p>09455426330</p>
+          </div>
+          <div class="contact-info-container">
+            <i class="fab fa-facebook contact-icon"></i>
+            <p>Harold Aldovino</p>
+          </div>
+          <div class="contact-info-container">
+            <i class="fab fa-linkedin contact-icon"></i>
+            <p>Harold Aldovino</p>
+          </div>
+        
+      </section>
+          <footer>
+            <nav>
+              <div class="nav-links-container">
+                <ul class="nav-links">
+                  <li><a href="{{ url_for('dashboard.index') }}">Dashboard</a></li>
+                  <li><a href="{{ url_for('profile.index') }}">Profile</a></li>
+                  <li><a href="{{ url_for('blog.index') }}">Blog</a></li>
+                  <li><a href="{{ url_for('account.index') }}">Account</a></li>
+                </ul>
+              </div>
+            </nav>
+            <p>Copyright &#169; 2023 Harold Aldovino. All Rights Reserved.</p>
+          </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

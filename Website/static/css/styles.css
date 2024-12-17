@@ -1,0 +1,213 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #D4E4F0, #A4C8E3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+main {
+    background: #ffffff; /* White background for the main section */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Soft shadows for depth */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #3f72af; /* Subtle dark blue for the heading */
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #4e4e4e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    color: #3f72af;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+a:hover {
+    color: #ff8c00; /* Bright hover color */
+}
+
+.registration-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+    
+.input-field {
+    width: 100%;
+    padding: 12px 40px 12px 40px; /* Space for left and right icons */
+    border-radius: 8px;
+    border: 2px solid #d0e2f2;
+    background-color: #fafafa;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.input-field:focus {
+    border-color: #ff8c00;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: #aaa; 
+}
+
+.input-field:focus::placeholder {
+    color: #3f72af;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #555;
+    z-index: 1;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 40px; /* Add padding-right for space for the eye icon */
+}
+
+.password-icon {
+    position: absolute;
+    right: 40px; /* Align eye icon properly */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    z-index: 2; /* Ensure icon is above the input field */
+}
+
+li {
+    list-style: none;
+    color: red;
+}
+
+.submit-button {
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #ff8c00; /* Vibrant button color */
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #e07b00; /* Slightly darker on hover */
+    transform: translateY(-3px); /* Button lift effect */
+}
+
+.submit-button:active {
+    transform: translateY(0); /* Button tap effect */
+}
+
+.submit-button:disabled {
+    background-color: #cfcfcf; /* Greyed-out disabled button */
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Slightly smaller font size */
+        padding: 10px;
+    }
+
+    main {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px; /* Adjust heading size for tablets */
+    }
+
+    .input-field {
+        font-size: 14px;
+        padding: 10px 36px; /* Reduce padding for smaller screens */
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Adjust body font for smaller devices */
+    }
+
+    main {
+        padding: 20px;
+        width: 90%; /* Shrink width on smaller devices */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller heading for mobile devices */
+    }
+
+    .input-field {
+        font-size: 12px; /* Smaller text size */
+        padding: 8px 34px; /* Compact padding for mobile devices */
+    }
+
+    .input-container i,
+    .password-icon {
+        font-size: 16px; /* Scale down icons */
+    }
+
+    .submit-button {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+

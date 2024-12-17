@@ -1,0 +1,236 @@
+/* General Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+} */
+
+/* Container */
+.info {
+    color: #3f72af;
+}
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: 600;
+}
+
+/* Headings */
+.create-user {
+    color: #3498db; /* Blue */
+    text-align: center;
+}
+
+/* Forms */
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label {
+    font-size: 1rem;
+    color: #6E6E6E;
+    font-weight: bolder;
+}
+
+input[type="text"], input[type="date"], input[type="password"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input[type="submit"], button[type="submit"] {
+    background-color: #e67e22; /* Orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover, button[type="submit"]:hover {
+    background-color: #d35400; /* Darker orange */
+}
+
+/* Links */
+.back-link {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: #2980b9;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Actions Icons */
+a i {
+    font-size: 1.5rem;
+    color: #e67e22; /* Orange */
+}
+
+a:hover i {
+    color: #d35400;
+}
+
+/* Add User Button */
+.add-user-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.add-button {
+    background-color: #3498db; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.add-button:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+.text-danger {
+    color: red;
+}
+
+.error-message {
+    color: red;
+}
+
+.fas.fa-edit {
+    margin-right: 7px;
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .create-user {
+        font-size: 1.2rem;
+    }
+
+    .create-form {
+        gap: 15px;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    input[type="text"], input[type="date"], input[type="password"] {
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+
+    input[type="submit"], button[type="submit"] {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .back-link {
+        font-size: 0.9rem;
+    }
+
+    /* Table Styling on Small Screens */
+    table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table td, table th {
+        font-size: 0.9rem;
+    }
+
+    table td {
+        display: block;
+        width: 100%;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    .add-user-container {
+        margin-top: 15px;
+    }
+
+    .add-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .about-details-container-profile {
+        position: relative;
+        top: 40px;
+    }
+
+    .about-pic {
+        /* margin-top: 40px; */
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    input[type="text"], input[type="date"], input[type="password"] {
+        padding: 10px 0;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+    }
+}    

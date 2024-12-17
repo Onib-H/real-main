@@ -1,0 +1,71 @@
+.photo-gallery {
+    position: relative;
+    bottom: 50px;
+    padding: 20px; /* Add padding for spacing around the gallery */
+}
+
+.photo-gallery-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 equal-width columns */
+    gap: 20px; /* Adds consistent spacing between items */
+    position: relative;
+    bottom: 3px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column; /* Arrange image and description vertically */
+    align-items: flex-start; /* Align content to the left */
+    border: 1px solid hsl(0, 0%, 60%);
+    margin: 5px;
+    width: 100%;
+    max-width: 375px; /* Maintain a maximum width for each item */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.gallery .description {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff8c00;
+}
+
+.gallery img {
+    width: 100%; /* Adjust to match container width */
+    height: 200px; /* Consistent height for all images */
+    object-fit: cover;
+    object-position: left; /* Align image to the left */
+    display: block;
+}
+
+.gallery:hover {
+    background-color: #e07b00;
+    transform: translateY(-3px);
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 1024px) {
+    .photo-gallery-section {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 items per row on medium screens */
+        gap: 15px; /* Reduce gap for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-gallery-section {
+        grid-template-columns: 1fr; /* Display 1 item per row on smaller screens */
+        gap: 10px; /* Further reduce gap on smaller screens */
+    }
+
+    .gallery {
+        max-width: 90%; /* Make the gallery take up more width on smaller screens */
+    }
+
+    .gallery .description {
+        font-size: 0.9rem; /* Reduce text size slightly */
+    }
+}

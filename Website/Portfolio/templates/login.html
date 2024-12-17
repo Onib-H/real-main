@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Log in</title>
+</head>
+<body>
+    <main>
+        <h1>Login</h1>
+        <form method="POST" action="/" class="registration-form">
+            <div class="input-container">
+                <i class="fas fa-user"></i> <!-- User Icon for Username -->
+                <input type="text" id="username" name="username" class="input-field" placeholder="Username" value="{{ request.form.get('username', '') }}">
+            </div>
+            <br>
+
+            <div class="input-container">
+                <i class="fas fa-lock"></i> <!-- Lock Icon for Password -->
+                <div class="password-container">
+                    <input type="password" id="password" name="password" class="input-field" placeholder="Password">
+                    <span id="toggle-password" class="password-icon">
+                        <i class="fas fa-eye"></i> <!-- Eye Icon for Password Visibility Toggle -->
+                    </span>
+                </div>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+    </main>
+
+    <script>
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordField = document.getElementById('password');
+        const passwordIcon = togglePassword.querySelector('i');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+
+            // Toggle the icon
+            passwordIcon.classList.toggle('fa-eye');
+            passwordIcon.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

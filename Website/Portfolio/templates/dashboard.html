@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mediaqueries.css') }}" />
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+<<<<<<< HEAD
+      <div class="logo"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo" /></div>
+=======
+      <div class="logo"><a href="{{ url_for('dashboard.index') }}"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo"/></a></div>
+>>>>>>> c0d931b (Initial commit)
+      <div>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('dashboard.index') }}" class="active">Dashboard</a></li>
+          <li><a href="{{ url_for('profile.index') }}">Profile</a></li>
+          <li><a href="{{ url_for('blog.index') }}">Blog</a></li>
+          <li><a href="{{ url_for('account.index') }}">Account</a></li>
+          <li><a href="{{ url_for('dashboard.logout') }}">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo"/></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="{{ url_for('dashboard.index') }}" onclick="toggleMenu()">Dashboard</a></li>
+          <li><a href="{{ url_for('profile.index') }}" onclick="toggleMenu()">Profile</a></li>
+          <li><a href="{{ url_for('blog.index') }}" onclick="toggleMenu()">Blog</a></li>
+          <li><a href="{{ url_for('account.index') }}" onclick="toggleMenu()">Account</a></li>
+          <li><a href="{{ url_for('dashboard.logout') }}" onclick="toggleMenu()">Logout</a></li>
+        </div>
+      </div>
+    </nav>
+    <h2 class="welcome">Welcome to my Portfolio</h2>
+    <p class="section__text__p1">You are login as {{ session['user'] }} </p>
+    <section id="profile">
+
+      <div class="section__pic-container">
+        <img src="{{ url_for('static', filename='image/me.png') }}" class="dashboard-pic" />
+      </div>
+      <div class="section__text">
+        <h2 class="welcome">Harold Aldovino</h2>
+        <p class="section__text__p2">Web Designer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1">
+            Contact Info
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="{{ url_for('static', filename='image/experience.png') }}"
+                class="icon"
+              />
+              <h3 class="big">Current Learning and Development</h3>
+              <p class="small">Learning and Practicing Web Design<br />Aspiring Web Designer</p>
+
+            </div>
+            <div class="details-container">
+              <img
+                src="{{ url_for('static', filename='image/education.png') }}"
+                class="icon"
+              />
+              <h3 class="big">Education</h3>
+              <p class="small">Bachelor of Science in Information Technology<br />Specialization: System Development<br />2nd Year Student</p>
+
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I am a dedicated and motivated second-year student pursuing
+              a Bachelor's degree in Information Technology with a specialization
+              in System Development. Alongside my academic journey, I am learning
+              web design and frontend development, aiming to build a strong foundation
+              in both fields. My goal is to grow my skills and apply them to real-world projects,
+              contributing to the tech community. I am passionate about technology, problem-solving,
+              and continuous learning, and I am excited about the opportunities that lie ahead in my career.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="projects">
+      <h1 class="title">Who Am I</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='image/project-1.webp') }}"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Coding Passion</h2>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='image/project-2.jpg') }}"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Learning Journey</h2>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='image/project-3.jpg') }}"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Future Vision</h2>
+          </div>
+        </div>
+        <p>
+          My name is Harold Aldovino, a passionate IT student specializing in System Development. 
+          I love learning new technologies, solving problems, and continuously improving myself. 
+          My goal is to contribute meaningfully to the tech industry and make a positive impact.
+      </p>
+      </div>
+    </section>
+    <section id="projects">
+      <h1 class="title">My Dream Job</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='image/project-1.webp') }}"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Coding Passion</h2>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='image/project-2.jpg') }}"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Learning Journey</h2>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{{ url_for('static', filename='image/project-3.jpg') }}"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Future Vision</h2>
+          </div>
+        </div>
+        <p>
+          I aspire to work for a company that values skill development and offers opportunities 
+          for growth while providing financial stability. Alternatively, I envision starting my 
+          own business in technology, such as a computer shop or repair service, to serve my 
+          community and achieve my entrepreneurial goals.
+      </p>
+      </div>
+    </section> -->
+    
+    <section id="contact">
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p>haroldaldovino@gmail.com</p>
+        </div>
+        <div class="contact-info-container">
+          <i class="fas fa-phone contact-icon"></i> 
+          <p>09455426330</p>
+        </div>
+        <div class="contact-info-container">
+          <i class="fab fa-facebook contact-icon"></i>
+          <p>Harold Aldovino</p>
+        </div>
+        <div class="contact-info-container">
+          <i class="fab fa-linkedin contact-icon"></i>
+          <p>Harold Aldovino</p>
+        </div>
+      
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+          <li><a href="{{ url_for('dashboard.index') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('profile.index') }}">Profile</a></li>
+          <li><a href="{{ url_for('blog.index') }}">Blog</a></li>
+          <li><a href="{{ url_for('account.index') }}">Account</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Harold Aldovino. All Rights Reserved.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

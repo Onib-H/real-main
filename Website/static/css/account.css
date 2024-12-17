@@ -1,0 +1,104 @@
+
+
+/* General table styling */
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+/* General table styling */
+/* General table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Responsive Wrapper */
+.responsive-table-wrapper {
+    overflow-x: auto; /* Horizontal scrolling if needed */
+    margin-bottom: 20px;
+}
+
+
+/* Responsive: Stacked Cards on Smaller Screens */
+@media (max-width: 800px) {
+    .table, .table tbody, .table tr, .table td, .table th {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    .table-data {
+        margin-bottom: 20px;
+        border: #289be8;
+    }
+    
+    .table td[data-label] {
+        background-color: #3498db;
+        color: black;
+        border: 1px solid white;
+        font-weight: 500;
+    }
+    
+
+    .table th {
+        display: none; /* Hide headers in stacked layout */
+    }
+
+    .table td {
+        padding: 15px 10px; /* Add more padding for better spacing */
+        border-bottom: 1px solid #3498db;
+        position: relative;
+        text-align: left; /* Ensure text is aligned to the left */
+        word-wrap: break-word; /* Prevent text from overflowing */
+    }
+
+    .table td[data-label]:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 40%; /* Allocate space for the label */
+        white-space: nowrap; /* Prevent label wrapping */
+        text-align: left;
+        color: white;
+    }
+
+    .table td {
+        padding-left: 50%; /* Ensure enough space for label and value */
+    }
+
+    .table td:last-child {
+        text-align: left; /* Center-align the Actions column */
+    }
+
+    /* For Action icons specifically */
+    .table td:last-child a {
+        margin-right: 10px; /* Add spacing between icons */
+        display: inline-block; /* Ensure icons do not stack */
+        font-size: 1.2em; /* Increase icon size for visibility */
+        color: #007bff; /* Color for icons */
+    }
+
+    .table td:last-child a:hover {
+        color: #0056b3; /* Darker color on hover */
+    }
+
+
+    table {
+        overflow: hidden;
+        max-width: 100vw;
+        width: 100%;
+    }
+
+    .add-button {
+        position: relative;
+        bottom: 20px;
+    }
+
+}
