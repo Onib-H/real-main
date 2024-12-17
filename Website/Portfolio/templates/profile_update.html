@@ -16,12 +16,8 @@
   </head>
   <body>
     <nav id="desktop-nav">
-<<<<<<< HEAD
       <div class="logo"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo" /></div>
       <div>
-=======
-      <div class="logo"><a href="{{ url_for('dashboard.index') }}"><img src="{{ url_for('static', filename='image/logo.png') }}" class="logo"/></a></div>      <div>
->>>>>>> c0d931b (Initial commit)
         <ul class="nav-links">
           <li><a href="{{ url_for('dashboard.index') }}">Dashboard</a></li>
           <li><a href="{{ url_for('profile.index') }}">Profile</a></li>
@@ -70,21 +66,13 @@
           {% endif %}
       
           <label for="birthday">Birthday:</label>
-<<<<<<< HEAD
           <input type="date" name="birthday" value="{{ data['birthday'] }}" required>
-=======
-          <input type="date" id="birthday" name="birthday" value="{{ data['birthday'] }}" required>
->>>>>>> c0d931b (Initial commit)
           {% if errors['birthday'] %}
               <p class="error-message">{{ errors['birthday'] }}</p>
           {% endif %}
       
           <label for="age">Age:</label>
-<<<<<<< HEAD
           <input type="text" name="age" value="{{ data['age'] }}" required>
-=======
-          <input type="text" id="age" name="age" value="{{ data['age'] }}" required>
->>>>>>> c0d931b (Initial commit)
           {% if errors['age'] %}
               <p class="error-message">{{ errors['age'] }}</p>
           {% endif %}
@@ -144,9 +132,5 @@
         <p>Copyright &#169; 2023 Harold Aldovino. All Rights Reserved.</p>
       </footer>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<<<<<<< HEAD
-=======
-    <script src="{{ url_for('static', filename='js/age.js') }}"></script>
->>>>>>> c0d931b (Initial commit)
   </body>
 </html>
